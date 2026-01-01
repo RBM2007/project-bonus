@@ -1,22 +1,21 @@
+'use client';
 
-import Atendente from '../assets/atendente.png'
+import Atendente from '../assets/atendente.png';
+import { LayoutRight } from '../layout/App/Right';
 
 import {
-  Container,
-  FormSection,
-  Title,
-  Form,
-  Input,
   Button,
+  Container,
+  Form,
+  FormSection,
+  Input,
   LoginLink,
-
-} from "./styles";
-import { LayoutRight } from "../layout/App/Right";
+  Title,
+} from './styles';
 
 export default function Cadastro() {
   return (
     <Container>
- 
       <FormSection>
         <Form>
           <Title>Comece a fidelizar seus clientes hoje mesmo</Title>
@@ -63,15 +62,11 @@ export default function Cadastro() {
 
           <Button>Cadastre-se</Button>
 
-          <LoginLink href="#">Já tenho uma conta</LoginLink>
+          <LoginLink href="/login">Já tenho uma conta</LoginLink>
         </Form>
       </FormSection>
 
-      
-    <LayoutRight
-    image={Atendente}
-    alt=""/>
-
+      <LayoutRight image={Atendente} alt="" />
     </Container>
   );
 }

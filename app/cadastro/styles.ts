@@ -1,19 +1,16 @@
 import { styled } from "../styles";
 
-
-
-export const Container = styled("main", {
+export const Container = styled("div", {
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   minHeight: "100vh",
 });
 
-
 export const FormSection = styled("section", {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "$gray025",
+  backgroundColor: "$gray100",
 });
 
 export const Form = styled("form", {
@@ -48,7 +45,7 @@ export const Input = styled("div", {
     padding: "0 12px",
     fontSize: "$sm",
     color: "$gray900",
-    backgroundColor: "$gray025",
+    backgroundColor: "$gray100",
 
     "&::placeholder": {
       color: "$gray400",
@@ -67,7 +64,7 @@ export const Input = styled("div", {
     padding: "0 12px",
     fontSize: "$sm",
     color: "$gray900",
-    backgroundColor: "$gray025",
+    backgroundColor: "$gray100",
 
     "&:focus": {
       outline: "none",
@@ -83,7 +80,7 @@ export const Button = styled("button", {
   borderRadius: "8px",
   border: "none",
   backgroundColor: "$greenwater500",
-  color: "$gray025",
+  color: "$gray100",
   fontSize: "$sm",
   fontWeight: 600,
   cursor: "pointer",
@@ -100,9 +97,6 @@ export const LoginLink = styled("a", {
   fontSize: "$sm",
   color: "$greenwater500",
   textDecoration: "none",
-  fontWeight:'bolder',
-  fontFamily:'$inter'
+  fontWeight: "bold",
+  fontFamily: "$inter",
 });
-
-
-
