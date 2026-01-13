@@ -1,6 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { toast } from 'react-toastify'
+
 import {
   Container,
   Title,
@@ -17,9 +20,9 @@ import { LayoutRight } from '../layout/App/Right'
 import { Eye, EyeSlash } from 'phosphor-react'
 import { getUser } from '../api/auth'
 
-
-
 export default function LoginPage() {
+  const router = useRouter()
+
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -28,14 +31,15 @@ export default function LoginPage() {
     const user = getUser()
 
     if (!user) {
-      console.log('Nenhum usuário cadastrado')
+      toast.error('Nenhum usuário cadastrado')
       return
     }
 
     if (user.email === email && user.senha === senha) {
-      console.log('✅ Login realizado com sucesso', user)
+      toast.success('Login realizado com sucesso')
+      router.push('/dashboard/historico-vendas')
     } else {
-      console.log('❌ Email ou senha inválidos')
+      toast.error('Email ou senha inválidos')
     }
   }
 
