@@ -1,7 +1,5 @@
 import { styled } from "../../styles";
 
-
-
 export const SidebarContainer = styled("aside", {
   position: "fixed",
   top: 0,
@@ -9,8 +7,6 @@ export const SidebarContainer = styled("aside", {
 
   width: 280,
   height: "100vh",
-
-  zIndex: 0,
 
   background: "linear-gradient(180deg, #0B1220 0%, #0E1A2F 100%)",
 
@@ -20,7 +16,6 @@ export const SidebarContainer = styled("aside", {
 
   padding: "2rem 1.5rem",
 });
-
 
 export const LogoBonus = styled("div", {
   display: "flex",
@@ -36,51 +31,78 @@ export const Divider = styled("div", {
 });
 
 export const Menu = styled("nav", {
-  marginBottom: "10rem",
   display: "flex",
   flexDirection: "column",
-  gap: "0.5rem",
+  gap: "0.25rem",
+
+  a: {
+    textDecoration: "none",
+    color: "inherit",
+  },
 });
 
-export const MenuItem = styled("button", {
-  all: "unset",
-  cursor: "pointer",
+export const MenuItem = styled("div", {
   display: "flex",
   alignItems: "center",
   gap: "0.75rem",
+
   padding: "0.75rem 1rem",
   borderRadius: 8,
-  color: "#C7D2E5",
+
   fontSize: "0.95rem",
+  fontWeight: 400,
+
+  color: "#C7D2E5",
+  cursor: "pointer",
+
+  transition: "background 0.2s ease, color 0.2s ease",
+
+  svg: {
+    transition: "color 0.2s ease",
+  },
 
   "&:hover": {
-    background: "rgba(255,255,255,0.05)",
+    background: "#1BC47D",
+    color: "#FFFFFF",
+
+    svg: {
+      color: "#FFFFFF",
+    },
   },
 
   variants: {
     active: {
       true: {
         background: "#1BC47D",
-        color: "#04120B",
+        color: "#FFFFFF",
         fontWeight: 500,
+
+        svg: {
+          color: "#FFFFFF",
+        },
       },
     },
   },
 });
 
 export const Footer = styled("footer", {
+  paddingTop: "1rem",
+  borderTop: "1px solid rgba(255,255,255,0.12)",
+
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  color: "#8FA2C0",
+
   fontSize: "0.75rem",
+  color: "#8FA2C0",
 
   strong: {
-    color: "#fff",
     display: "block",
+    color: "#FFFFFF",
   },
 
   svg: {
     cursor: "pointer",
+    color: "#E11D48",
   },
 });

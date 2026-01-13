@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import {
   PlusCircle,
   ListBullets,
@@ -19,6 +22,8 @@ import {
 import logo from "../../assets/logo-bonus-branca.png";
 
 export function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <SidebarContainer>
       <div>
@@ -29,15 +34,19 @@ export function Sidebar() {
         <Divider />
 
         <Menu>
-          <MenuItem active>
-            <PlusCircle size={20} />
-            Registrar venda
-          </MenuItem>
+          <Link href="/dashboard/registrar-venda">
+            <MenuItem active={pathname === "/registrar-venda"}>
+              <PlusCircle size={20} />
+              Registrar venda
+            </MenuItem>
+          </Link>
 
-          <MenuItem>
-            <ListBullets size={20} />
-            Histórico de vendas
-          </MenuItem>
+          <Link href="/dashboard/historico-vendas">
+            <MenuItem active={pathname === "/historico-vendas"}>
+              <ListBullets size={20} />
+              Histórico de vendas
+            </MenuItem>
+          </Link>
         </Menu>
       </div>
 

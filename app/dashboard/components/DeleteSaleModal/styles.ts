@@ -3,7 +3,7 @@ import { styled } from "@/app/styles";
 export const Overlay = styled("div", {
   position: "fixed",
   inset: 0,
-  backgroundColor: "rgba(0,0,0,0.4)",
+  backgroundColor: "rgba(0,0,0,0.45)",
 
   display: "flex",
   alignItems: "center",
@@ -12,89 +12,99 @@ export const Overlay = styled("div", {
   zIndex: 1000,
 });
 
-export const Container = styled('main', {
-  width: '100%',
-  minHeight: '100vh',
-  maxWidth: '1280px',
-  margin: '0 auto',
+export const Container = styled("main", {
+  width: "100%",
+  maxWidth: 460,
 
-  padding: '$6',
-  boxSizing: 'border-box',
+  padding: "32px",
+  boxSizing: "border-box",
 
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '$5',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: "20px",
 
-  overflowX: 'hidden',
+  backgroundColor: "$white",
+  borderRadius: 16,
 
-  borderRadius: '$lg',      // ✅ AQUI
-  backgroundColor: '$white' // ✅ necessário para o radius aparecer
+  boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
 });
 
-
 export const IconWrapper = styled("div", {
-  width: 36,
-  height: 36,
+  width: 56,
+  height: 56,
   borderRadius: "50%",
 
-  backgroundColor: "$red100",
+  backgroundColor: "rgba(239, 68, 68, 0.12)",
   color: "$red500",
 
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-
-  marginBottom: "$3",
 });
 
 export const Title = styled("h2", {
-  fontSize: "$sm",
-  fontWeight: "$bold",
+  fontSize: "20px",
+  fontWeight: 600,
   color: "$gray900",
-
-  marginBottom: "$1",
+  textAlign: "center",
 });
 
 export const Description = styled("p", {
-  fontSize: "$xs",
+  fontSize: "14px",
   color: "$gray500",
-  lineHeight: "$short",
-
-  marginBottom: "auto",
+  lineHeight: "1.6",
+  textAlign: "center",
 
   strong: {
+    display: "block",
+    marginTop: 4,
     color: "$gray700",
+    fontWeight: 600,
   },
 });
 
 export const Actions = styled("div", {
   width: "100%",
   display: "flex",
-  gap: "$3",
+  gap: "16px",
+  marginTop: "8px",
 });
 
 export const CancelButton = styled("button", {
   flex: 1,
-  height: 36,
+  height: 48,
 
-  borderRadius: "$md",
+  borderRadius: 10,
   border: "1px solid $gray300",
-  backgroundColor: "transparent",
+  backgroundColor: "$white",
 
-  fontSize: "$sm",
-  fontWeight: "$medium",
+  fontSize: "16px",
+  fontWeight: 500,
   color: "$gray700",
+
+  cursor: "pointer",
+
+  "&:hover": {
+    backgroundColor: "$gray100",
+  },
 });
 
 export const DeleteButton = styled("button", {
   flex: 1,
-  height: 36,
+  height: 48,
 
-  borderRadius: "$md",
+  borderRadius: 10,
   border: "none",
   backgroundColor: "$red500",
 
-  fontSize: "$sm",
-  fontWeight: "$medium",
+  fontSize: "16px",
+  fontWeight: 600,
   color: "$white",
+
+  cursor: "pointer",
+
+  "&:hover": {
+    filter: "brightness(0.9)",
+  },
 });

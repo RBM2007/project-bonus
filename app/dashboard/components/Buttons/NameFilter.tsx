@@ -1,4 +1,3 @@
-
 import { MagnifyingGlass } from "phosphor-react";
 import {
   Card,
@@ -10,16 +9,30 @@ import {
   SearchButton,
 } from "./styles";
 
-export function NameFilter() {
+type NameFilterProps = {
+  value: string;
+  onChange: (value: string) => void;
+  onClear: () => void;
+};
+
+export function NameFilter({
+  value,
+  onChange,
+  onClear,
+}: NameFilterProps) {
   return (
     <Card>
       <Header>
         <Title>Nome</Title>
-        <Clear>Limpar</Clear>
+        <Clear onClick={onClear}>Limpar</Clear>
       </Header>
 
       <InputGroup>
-        <Input placeholder="Informe" />
+        <Input
+          placeholder="Informe"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
         <SearchButton>
           <MagnifyingGlass size={18} />
         </SearchButton>

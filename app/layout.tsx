@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { globalStyles } from "./styles/global";
 import { getCssText } from "./styles";
+import { SeedProvider } from "./api/seed/seedProvider";
 
 
 const inter = Inter({
@@ -19,7 +20,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
- 
   globalStyles();
 
   return (
@@ -32,7 +32,9 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.variable} antialiased`}>
-        {children}
+        <SeedProvider>
+          {children}
+        </SeedProvider>
       </body>
     </html>
   );

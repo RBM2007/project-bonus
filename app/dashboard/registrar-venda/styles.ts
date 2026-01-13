@@ -1,153 +1,192 @@
 import { styled } from "@/app/styles";
 
-
-/* Página */
-export const Page = styled('main', {
-
-  borderRadius: '$lg',
-  padding: '$6',
-  width: '100%',
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '$6',
+export const Header = styled("header", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
 });
 
-/* Header */
-export const Header = styled('header', {
-  display: 'flex',
-  alignItems: 'center',
-});
-
-export const Title = styled('h1', {
-  fontSize: '$xl',
-  fontWeight: '$bold',
-  color: '$gray900',
-});
-
-/* Card do formulário */
-export const FormCard = styled('div', {
-  border: '1px solid $gray100',
-  borderRadius: '$lg',
-  padding: '$5',
-});
-
-/* Grid do formulário */
-export const FormGrid = styled('div', {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-  gap: '$4',
-});
-
-/* Campo */
-export const Field = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '$2',
-
-  label: {
-    fontSize: '$sm',
-    color: '$gray600',
-    fontWeight: '$medium',
-  },
+export const Title = styled("h1", {
+  fontSize: "$lg",
+  fontWeight: "$bold",
+  color: "$gray900",
 
   variants: {
-    disabled: {
+    section: {
       true: {
-        opacity: 0.6,
-        pointerEvents: 'none',
+        fontSize: "$sm",
+        color: "$gray700",
       },
     },
   },
 });
 
-/* Input */
-export const Input = styled('input', {
-  height: 40,
-  padding: '0 $3',
-  borderRadius: '$md',
-  border: '1px solid $gray300',
-  fontSize: '$sm',
-  color: '$gray800',
-  backgroundColor: '$white',
-
-  '&:focus': {
-    outline: 'none',
-    borderColor: '$green500',
-  },
-
-  '&:disabled': {
-    backgroundColor: '$gray100',
-    cursor: 'not-allowed',
-  },
+export const FormCard = styled("div", {
+  border: "1px solid $gray200",
+  borderRadius: "$md",
+  padding: "$5",
+  backgroundColor: "$white",
 });
 
-/* Grupo de input + botão */
-export const InputGroup = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
+export const FormGrid = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "$4",
 });
 
-/* Botão de busca */
-export const SearchButton = styled('button', {
-  height: 40,
-  width: 40,
-  marginLeft: '-1px',
-  borderRadius: '0 $md $md 0',
-  border: '1px solid $gray300',
-  backgroundColor: '$gray100',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  cursor: 'pointer',
+export const Field = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$1",
+});
 
-  color: '$gray700',
+export const Label = styled("label", {
+  fontSize: "$xs",
+  fontWeight: "$medium",
+  color: "$gray600",
+});
 
-  '&:hover': {
-    backgroundColor: '$gray200',
+export const Input = styled("input", {
+  height: 36,
+  padding: "0 $3",
+  borderRadius: "$sm",
+  border: "1px solid $gray300",
+  fontSize: "$sm",
+  backgroundColor: "$white",
+
+  "&:focus": {
+    outline: "none",
+    borderColor: "$green500",
   },
 });
 
-/* Card de seção */
-export const SectionCard = styled('section', {
-  border: '1px solid $gray300',
-  borderRadius: '$lg',
-  padding: '$5',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '$4',
+export const LockedInput = styled("input", {
+  height: 36,
+  padding: "0 $3",
+  borderRadius: "$sm",
+  border: "1px solid $gray200",
+  fontSize: "$sm",
+  backgroundColor: "$gray100",
+  color: "$gray700",
+  cursor: "not-allowed",
+
+  "&:disabled": {
+    opacity: 1,
+  },
 });
 
-/* Título da seção */
-export const SectionTitle = styled('h2', {
-  fontSize: '$md',
-  fontWeight: '$bold',
-  color: '$gray800',
+export const InputGroup = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  position: "relative",
 });
 
-/* Rodapé / paginação */
-export const FooterPagination = styled('footer', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+export const SearchButton = styled("button", {
+  position: "absolute",
+  right: 4,
+  height: 28,
+  width: 28,
+  borderRadius: "$sm",
+  border: "none",
+  backgroundColor: "$green500",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  color: "$white",
+});
+
+export const Actions = styled("div", {
+  display: "flex",
+  justifyContent: "flex-end",
+  gap: "$2",
+  marginTop: "$4",
+});
+
+export const SubmitButton = styled("button", {
+  height: 32,
+  padding: "0 $3",
+  borderRadius: "$sm",
+  border: "none",
+  backgroundColor: "$green500",
+  color: "$white",
+  fontSize: "$xs",
+  fontWeight: "$bold",
+  cursor: "pointer",
+
+  "&:hover": {
+    backgroundColor: "$green600",
+  },
+
+  variants: {
+    outline: {
+      true: {
+        backgroundColor: "$white",
+        color: "$gray600",
+        border: "1px solid $gray300",
+
+        "&:hover": {
+          backgroundColor: "$gray100",
+        },
+      },
+    },
+  },
+});
+
+export const TableHeader = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  marginTop: "$6",
+  marginBottom: "$2",
+});
+
+export const TableHead = styled("th", {
+  padding: "$2",
+  fontSize: "$xs",
+  fontWeight: "$bold",
+  color: "$gray600",
+  borderBottom: "1px solid $gray200",
+  whiteSpace: "nowrap",
+});
+
+export const TableRow = styled("tr", {
+  "&:hover": {
+    backgroundColor: "$gray50",
+  },
+});
+
+export const TableCell = styled("td", {
+  padding: "$2",
+  fontSize: "$xs",
+  color: "$gray800",
+  borderBottom: "1px solid $gray100",
+  whiteSpace: "nowrap",
+});
+
+export const FooterPagination = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  marginTop: "$3",
+  gap: "$2",
+
+  button: {
+    height: 28,
+    padding: "0 $3",
+    borderRadius: "$sm",
+    border: "1px solid $gray300",
+    backgroundColor: "$white",
+    fontSize: "$xs",
+    cursor: "pointer",
+
+    "&:hover": {
+      backgroundColor: "$gray100",
+    },
+  },
 
   span: {
-    fontSize: '$xs',
-    color: '$gray500',
-  },
-});
-
-/* Botão de paginação */
-export const PaginationButton = styled('button', {
-  padding: '$2 $3',
-  borderRadius: '$md',
-  border: '1px solid $gray300',
-  backgroundColor: '$white',
-  fontSize: '$sm',
-  cursor: 'pointer',
-  color: '$gray700',
-
-  '&:hover': {
-    backgroundColor: '$gray100',
+    fontSize: "$xs",
+    color: "$gray600",
   },
 });

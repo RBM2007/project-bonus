@@ -1,8 +1,13 @@
+'use client'
+
+import { useEffect } from 'react'
+import { seedSales } from './api/seed/seed'
 
 
 export default function Home() {
- return(
-  <h1>Hello World</h1>
- )
+  useEffect(() => {
+    seedSales()
+  }, [])
+
+  return <h1>Hello World</h1>
 }
-  

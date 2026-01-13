@@ -14,21 +14,22 @@ export const TriggerButton = styled("button", {
   cursor: "pointer",
 });
 
+/* 🔥 CALENDÁRIO SOBREPOSTO E CENTRALIZADO */
 export const Popover = styled("div", {
-  position: "absolute",
-  top: "48px",
-  right: 0,
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 
   display: "flex",
   backgroundColor: "$white",
   border: "1px solid $gray300",
   borderRadius: "$lg",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+  boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
 
   overflow: "hidden",
-  zIndex: 20,
+  zIndex: 9999,
 });
-
 
 export const Sidebar = styled("div", {
   width: 180,
@@ -60,7 +61,6 @@ export const Preset = styled("button", {
   },
 });
 
-
 export const CalendarArea = styled("div", {
   padding: "$4",
 
@@ -90,7 +90,6 @@ export const CalendarArea = styled("div", {
     borderRadius: "$sm",
   },
 
-
   ".rdp-day_range_middle": {
     backgroundColor: "$green100",
   },
@@ -101,7 +100,6 @@ export const CalendarArea = styled("div", {
     fontWeight: "$bold",
   },
 });
-
 
 export const Footer = styled("div", {
   marginTop: "$3",

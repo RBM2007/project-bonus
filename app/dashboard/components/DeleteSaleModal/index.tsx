@@ -1,4 +1,3 @@
-
 import { WarningCircle } from "phosphor-react";
 import {
   Overlay,
@@ -11,25 +10,37 @@ import {
   DeleteButton,
 } from "./styles";
 
-export function DeleteSaleModal() {
+type DeleteSaleModalProps = {
+  onCancel: () => void;
+  onConfirm: () => void;
+};
+
+export function DeleteSaleModal({
+  onCancel,
+  onConfirm,
+}: DeleteSaleModalProps) {
   return (
-    <Overlay>
-      <Container>
+    <Overlay onClick={onCancel}>
+      <Container onClick={(e) => e.stopPropagation()}>
         <IconWrapper>
-          <WarningCircle size={20} weight="bold" />
+          <WarningCircle size={22} weight="bold" />
         </IconWrapper>
 
         <Title>Deletar venda realizada?</Title>
 
         <Description>
           Tem a certeza de que pretende apagar essa venda?
-          <br />
           <strong>Esta ação não pode ser anulada.</strong>
         </Description>
 
         <Actions>
-          <CancelButton>Cancelar</CancelButton>
-          <DeleteButton>Deletar</DeleteButton>
+          <CancelButton onClick={onCancel}>
+            Cancelar
+          </CancelButton>
+
+          <DeleteButton onClick={onConfirm}>
+            Deletar
+          </DeleteButton>
         </Actions>
       </Container>
     </Overlay>
