@@ -17,7 +17,7 @@ import Imagem from '../../../assets/redefinir-senha.png'
 export default function RedefinirSenha() {
   return (
     <Container>
-      {/* LEFT */}
+
       <Left>
         <Title>
           Precisa alterar <br /> sua senha?
@@ -36,7 +36,7 @@ export default function RedefinirSenha() {
         <Button>Alterar senha</Button>
       </Left>
 
-      {/* RIGHT */}
+
       <Right>
         <IllustrationWrapper>
           <Image

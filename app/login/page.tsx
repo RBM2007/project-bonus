@@ -43,6 +43,10 @@ export default function LoginPage() {
     }
   }
 
+  function handleRedirectToResetPassword() {
+    router.push('/login/redefinir-senha')
+  }
+
   return (
     <Container>
       <LayoutLeft>
@@ -80,7 +84,9 @@ export default function LoginPage() {
 
         <Button onClick={handleLogin}>Login</Button>
 
-        <LinkText>Redefinir senha</LinkText>
+        <LinkText onClick={handleRedirectToResetPassword}>
+          Redefinir senha
+        </LinkText>
       </LayoutLeft>
 
       <LayoutRight image={Atendente} alt="" />
